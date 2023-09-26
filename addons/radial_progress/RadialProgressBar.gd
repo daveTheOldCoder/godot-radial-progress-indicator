@@ -43,10 +43,11 @@ func _process(delta):
 func animate(duration,reverse = false,initial_value = 0):
 	var tween: Tween = create_tween()
 	if reverse:
-		tween.interpolate_method(self,"set_progress",max_value,initial_value,duration,Tween.TRANS_LINEAR,Tween.EASE_IN);
+		tween.tween_method(set_progress, max_value, initial_value, duration)\
+				.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	else:
-		tween.interpolate_method(self,"set_progress",initial_value,max_value,duration,Tween.TRANS_LINEAR,Tween.EASE_IN);
-	tween.start();
+		tween.tween_method(set_progress, initial_value, max_value, duration)\
+				.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 
 func draw_circle_arc(center, radius, angle_from, angle_to, color):
 	var nb_points = 32
