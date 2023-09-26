@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://0bj4ad27xgpa"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_hsrpd"]
+[ext_resource type="Script" path="res://addons/radial_progress/RadialProgressBar.gd" id="2_selfi"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_hsrpd")
+
+[node name="RunDemo" type="Button" parent="."]
+offset_left = 236.0
+offset_top = 94.0
+offset_right = 404.0
+offset_bottom = 147.0
+theme_override_font_sizes/font_size = 32
+text = "Run Demo"
+
+[node name="RadialProgress" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 316.0
+offset_top = 325.0
+offset_right = 356.0
+offset_bottom = 365.0
+script = ExtResource("2_selfi")
