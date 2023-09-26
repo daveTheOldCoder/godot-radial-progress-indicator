@@ -3,4 +3,5 @@
 
 # Custom
 addons/godot-git-plugin
+*.import
 
