@@ -22,3 +22,6 @@ offset_top = 325.0
 offset_right = 356.0
 offset_bottom = 365.0
 script = ExtResource("2_selfi")
+radius = 120
+progress = 0
+thickness = 20
