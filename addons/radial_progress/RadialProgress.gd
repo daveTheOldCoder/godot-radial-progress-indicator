@@ -1,6 +1,6 @@
 @tool
 extends Control
-
+class_name RadialProgress
 
 @export var max_value: float = 100.0:
 	set(v):

@@ -2,8 +2,8 @@ extends Node2D
 
 @onready var button: Button = $Button
 @onready var slider: Slider = $HSlider
-@onready var radial_progress1: Control = $RadialProgress1
-@onready var radial_progress2: Control = $RadialProgress2
+@onready var radial_progress1: RadialProgress = $RadialProgress1
+@onready var radial_progress2: RadialProgress = $RadialProgress2
 
 
 func _ready() -> void:
