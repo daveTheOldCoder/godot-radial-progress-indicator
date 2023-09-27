@@ -2,34 +2,35 @@
 extends Control
 
 
-@export var max_value: float = 100.0
-@export var radius: float = 120.0
-@export var progress: float = 0.0
-@export var thickness: float = 20.0
-@export var bg_color := Color(0.5, 0.5, 0.5, 1.0)
-@export var bar_color := Color(0.2, 0.9, 0.2, 1.0)
+@export var max_value: float = 100.0:
+	set(v):
+		max_value = v
+		_draw()
 
+@export var radius: float = 120.0:
+	set(v):
+		radius = v
+		queue_redraw()
 
-func set_max(_max_value: float) -> void:
-	max_value = _max_value
-	_draw()
+@export var progress: float = 0.0:
+	set(v):
+		progress = v
+		queue_redraw()
 
+@export var thickness: float = 20.0:
+	set(v):
+		thickness = v
+		queue_redraw()
 
-func set_progress(_progress: float) -> void:
-	progress = _progress
-	queue_redraw()
+@export var bg_color := Color(0.5, 0.5, 0.5, 1.0):
+	set(v):
+		bg_color = v
+		queue_redraw()
 
-
-func set_radius_and_thickness(_radius: float, _thickness: float) -> void:
-	radius = _radius
-	thickness = _thickness
-	queue_redraw()
-
-
-func set_colors(_bg_color: Color, _bar_color: Color) -> void:
-	bg_color = _bg_color
-	bar_color = _bar_color
-	queue_redraw()
+@export var bar_color := Color(0.2, 0.9, 0.2, 1.0):
+	set(v):
+		bar_color = v
+		queue_redraw()
 
 
 func _draw() -> void:
@@ -45,10 +46,10 @@ func _process(_delta: float) -> void:
 
 func animate(duration: float, reverse: bool = false, initial_value: float = 0.0)\
 		-> void:
-	var tween: Tween = create_tween()
 	var from: float = max_value if reverse else initial_value
 	var to: float = initial_value if reverse else max_value
-	tween.tween_method(set_progress, from, to, duration)\
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "progress", to, duration).from(from)\
 			.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)
 	await tween.finished
 
