@@ -44,10 +44,10 @@ func _process(_delta: float) -> void:
 	queue_redraw()
 
 
-func animate(duration: float, reverse: bool = false, initial_value: float = 0.0)\
+func animate(duration: float, clockwise: bool = true, initial_value: float = 0.0)\
 		-> void:
-	var from: float = max_value if reverse else initial_value
-	var to: float = initial_value if reverse else max_value
+	var from: float = initial_value if clockwise else max_value
+	var to: float = max_value if clockwise else initial_value
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "progress", to, duration).from(from)\
 			.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN)

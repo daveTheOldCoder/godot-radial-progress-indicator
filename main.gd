@@ -14,9 +14,9 @@ func _ready() -> void:
 # Demonstrates RadialProgress animate() method.
 func _on_button_pressed() -> void:
 	button.disabled = true
-	await radial_progress1.animate(2.0)
+	await radial_progress1.animate(2.0) # clockwise
 	await get_tree().create_timer(0.5).timeout
-	await radial_progress1.animate(2.0, true)
+	await radial_progress1.animate(2.0, false) # counterclockwise
 	button.disabled = false
 
 
