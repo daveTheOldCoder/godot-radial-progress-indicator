@@ -34,7 +34,7 @@ func set_colors(_bg_color: Color, _bar_color: Color) -> void:
 
 func _draw() -> void:
 	draw_circle_arc(Vector2.ZERO, radius, 0.0, TAU, bg_color)
-	var angle: float = progress * TAU / max_value
+	var angle: float = (progress / max_value) * TAU 
 	draw_circle_arc(Vector2.ZERO, radius, 0.0, angle, bar_color)
 	draw_circle_arc(Vector2.ZERO, radius - thickness, 0.0, TAU, bg_color)
 
