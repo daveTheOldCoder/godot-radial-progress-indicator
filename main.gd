@@ -14,7 +14,7 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	button.disabled = true
 	await radial_progress1.animate(2.0)
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(0.5).timeout
 	await radial_progress1.animate(2.0, true)
 	button.disabled = false
 
