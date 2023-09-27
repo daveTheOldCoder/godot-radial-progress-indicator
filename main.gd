@@ -11,6 +11,7 @@ func _ready() -> void:
 	slider.value_changed.connect(_on_slider_value_changed)
 
 
+# Demonstrates RadialProgress animate() method.
 func _on_button_pressed() -> void:
 	button.disabled = true
 	await radial_progress1.animate(2.0)
@@ -19,6 +20,7 @@ func _on_button_pressed() -> void:
 	button.disabled = false
 
 
+# Demonstrates explicit setting of RadialProgress progress property.
 func _on_slider_value_changed(v: float) -> void:
 	radial_progress2.progress =\
 			(v - slider.min_value) / (slider.max_value - slider.min_value)\
