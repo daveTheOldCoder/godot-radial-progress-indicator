@@ -1,16 +1,26 @@
 extends Node2D
 
-@onready var button: Button = $RunDemo
-@onready var radial_progress: Control = $RadialProgress
+@onready var button: Button = $Button
+@onready var slider: Slider = $HSlider
+@onready var radial_progress1: Control = $RadialProgress1
+@onready var radial_progress2: Control = $RadialProgress2
 
 
 func _ready() -> void:
 	button.pressed.connect(_on_button_pressed)
+	slider.value_changed.connect(_on_slider_value_changed)
 
 
 func _on_button_pressed() -> void:
 	button.disabled = true
-	await radial_progress.animate(2.0)
+	await radial_progress1.animate(2.0)
 	await get_tree().create_timer(1.0).timeout
-	await radial_progress.animate(2.0, true)
+	await radial_progress1.animate(2.0, true)
 	button.disabled = false
+
+
+func _on_slider_value_changed(v: float) -> void:
+	radial_progress2.progress =\
+			(v - slider.min_value) / (slider.max_value - slider.min_value)\
+			* radial_progress2.max_value
+

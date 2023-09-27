@@ -6,22 +6,45 @@
 [node name="Main" type="Node2D"]
 script = ExtResource("1_hsrpd")
 
-[node name="RunDemo" type="Button" parent="."]
-offset_left = 236.0
-offset_top = 94.0
-offset_right = 404.0
-offset_bottom = 147.0
+[node name="Button" type="Button" parent="."]
+offset_left = 67.0
+offset_top = 107.0
+offset_right = 235.0
+offset_bottom = 160.0
 theme_override_font_sizes/font_size = 32
-text = "Run Demo"
+text = "Run Timer"
 
-[node name="RadialProgress" type="Control" parent="."]
+[node name="RadialProgress1" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 316.0
-offset_top = 325.0
-offset_right = 356.0
-offset_bottom = 365.0
+offset_left = 434.0
+offset_top = 138.0
+offset_right = 474.0
+offset_bottom = 178.0
 script = ExtResource("2_selfi")
-radius = 120
-progress = 0
-thickness = 20
+radius = 100.0
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 341.0
+offset_right = 274.0
+offset_bottom = 386.0
+theme_override_font_sizes/font_size = 32
+text = "Manually Adjust"
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 39.0
+offset_top = 406.0
+offset_right = 247.0
+offset_bottom = 422.0
+
+[node name="RadialProgress2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 433.0
+offset_top = 364.0
+offset_right = 473.0
+offset_bottom = 404.0
+script = ExtResource("2_selfi")
+radius = 100.0
+thickness = 100.0
