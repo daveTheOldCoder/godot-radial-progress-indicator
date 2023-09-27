@@ -25,3 +25,10 @@ To use the plugin in another project, copy the folder *addons/radial_progress* i
 
 ![](filesystem_view.png)
 
+Then enable the plugin in Project / Project Settings... / Plugins.
+
+![](project_settings_plugins.png)
+
+Now the RadialProgress is available when creating a new node.
+
+![](create_new_node.png)
