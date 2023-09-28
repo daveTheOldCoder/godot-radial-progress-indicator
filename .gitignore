@@ -4,6 +4,5 @@
 # Custom
 addons/godot-git-plugin
 *.import
-addons/*.import
 *.backup
 
