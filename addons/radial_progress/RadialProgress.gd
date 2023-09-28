@@ -62,7 +62,7 @@ func draw_circle_arc(center: Vector2, radius: float, angle_from: float,\
 	var colors := PackedColorArray([color])
 	var a: float = angle_from - (PI / 2.0)
 	var b: float = (angle_to - angle_from) / float(nb_points)
-	for i: int in range(nb_points + 1):
+	for i in range(nb_points + 1):
 		var angle_point: float = a + float(i) * b
 		points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
 	draw_polygon(points_arc, colors)
