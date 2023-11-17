@@ -18,4 +18,5 @@ mono_crash.*.json
 *.import
 addons/godot-git-plugin
 README.md.backup
-
+todo.gd
+commit.log
