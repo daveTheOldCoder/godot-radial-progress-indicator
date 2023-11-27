@@ -33,4 +33,4 @@ Now the RadialProgress is available when creating a new node.
 
 ## Demo
 
-The repository includes a demo of the plugin. To use the demo, create a new folder RadialProgressIndicatorDemo containing the contents of the **demo/** folder. Copy the subfolder **addons/radial_progress/** into that folder. Then use the Godot Project Manager to import a Godot project using the contents of the RadialProgressIndicatorDemo folder.
+The repository includes a demo of the plugin. To use the demo, create a new folder containing the **addons/radial_progress/** subfolder and the contents of the **demo/** folder. Then use the Godot Project Manager to import a Godot project using the contents of the new folder.
