@@ -19,9 +19,7 @@ Instead of setting the *progress* property, the *animate* method can be called t
 
 ## Installation
 
-The plugin is provided inside a simple demonstration project.
-
-To use the plugin in another project, copy the folder *addons/radial_progress* into the project folder.
+To use the plugin in a project, copy the folder **addons/radial_progress/** into the project folder. If installing from the Godot Editor AssetLib tab, only that folder needs to be installed.
 
 ![](README_images/filesystem_dock.png)
 
@@ -32,3 +30,7 @@ Then enable the plugin in Project / Project Settings... / Plugins.
 Now the RadialProgress is available when creating a new node.
 
 ![](README_images/create_new_node.png)
+
+## Demo
+
+The repository includes a demo of the plugin. To use the demo, import a Godot project using the contents of the **demo/** folder, and follow the Installation instructions above. 
