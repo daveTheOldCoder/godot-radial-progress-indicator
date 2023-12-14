@@ -32,12 +32,18 @@ class_name RadialProgress
 		bar_color = v
 		queue_redraw()
 
+@export var ring: bool = false
+@export var nb_points: int = 32
 
 func _draw() -> void:
-	draw_circle_arc(Vector2.ZERO, radius, 0.0, TAU, bg_color)
 	var angle: float = (progress / max_value) * TAU
-	draw_circle_arc(Vector2.ZERO, radius, 0.0, angle, bar_color)
-	draw_circle_arc(Vector2.ZERO, radius - thickness, 0.0, TAU, bg_color)
+	if ring:
+		draw_ring_arc(Vector2.ZERO, radius, radius-thickness, 0.0, TAU, bg_color)
+		draw_ring_arc(Vector2.ZERO, radius, radius-thickness, 0.0, angle, bar_color)
+	else:
+		draw_circle_arc(Vector2.ZERO, radius, 0.0, TAU, bg_color)
+		draw_circle_arc(Vector2.ZERO, radius, 0.0, angle, bar_color)
+		draw_circle_arc(Vector2.ZERO, radius - thickness, 0.0, TAU, bg_color)
 
 
 func _process(_delta: float) -> void:
@@ -56,7 +62,6 @@ func animate(duration: float, clockwise: bool = true, initial_value: float = 0.0
 
 func draw_circle_arc(center: Vector2, radius: float, angle_from: float,\
 		angle_to: float, color: Color) -> void:
-	var nb_points: int = 32
 	var points_arc := PackedVector2Array()
 	points_arc.push_back(center)
 	var colors := PackedColorArray([color])
@@ -65,4 +70,18 @@ func draw_circle_arc(center: Vector2, radius: float, angle_from: float,\
 	for i in range(nb_points + 1):
 		var angle_point: float = a + float(i) * b
 		points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
+	draw_polygon(points_arc, colors)
+
+func draw_ring_arc(center: Vector2, radius1: float, radius2: float,\
+		angle_from: float, angle_to: float, color: Color) -> void:
+	var points_arc := PackedVector2Array()
+	var colors := PackedColorArray([color])
+	var a: float = angle_from - (PI / 2.0)
+	var b: float = (angle_to - angle_from) / float(nb_points)
+	for i in range(nb_points + 1):
+		var angle_point: float = a + float(i) * b
+		points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius1)
+	for i in range(nb_points, -1, -1):
+		var angle_point: float = a + float(i) * b
+		points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius2)
 	draw_polygon(points_arc, colors)

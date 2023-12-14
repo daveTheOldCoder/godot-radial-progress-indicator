@@ -10,10 +10,16 @@ Radial progress indicator is a plugin for the Godot game engine. It is a Control
 - thickness : thickness of indicator<br/>
 - bg\_color : background color<br/>
 - bar\_color : indicator color<br/>
+- ring : bool <br/>
+- nb_points : int <br/>
 
 Set the *progress* property to a positive value to move the indicator clockwise, and to a negative value to move the indicator counterclockwise.
 
 Instead of setting the *progress* property, the *animate* method can be called to move the progress indicator from *initial_value* to *max_value* over *duration* seconds.
+
+If *ring* is true, only the outer ring will be rendered. 
+
+Use *nb_points* to be able to change drawing accuracy.
 
 - animate(duration: float, clockwise: bool = true, initial\_value: float = 0.0) <br/>
 
