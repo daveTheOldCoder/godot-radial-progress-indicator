@@ -5,6 +5,9 @@ on:
     # Only run this workflow if github.ref_name has the form "x.y.z".
     tags: ["*.*.*"]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
