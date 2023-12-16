@@ -72,6 +72,7 @@ func draw_circle_arc(center: Vector2, radius: float, angle_from: float,\
 		points_arc.push_back(center + Vector2(cos(angle_point), sin(angle_point)) * radius)
 	draw_polygon(points_arc, colors)
 
+
 func draw_ring_arc(center: Vector2, radius1: float, radius2: float,\
 		angle_from: float, angle_to: float, color: Color) -> void:
 	var points_arc := PackedVector2Array()
