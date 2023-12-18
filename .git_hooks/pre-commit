@@ -23,7 +23,7 @@ exec 1>&2
 # If the versions differ or the comparision failed, exit with status 1,
 # and open a comparison session in Beyond Compare if it's available.
 abort_if_versions_differ () {
-	.git_hooks/versions_consistent.py "$1" "$2" >/dev/null
+	$(git config --get core.hooksPath)/versions_consistent.py "$1" "$2" >/dev/null
 	if [ $? -ne 0 ]; then
 		echo Versions in "$1" and "$2" may be different ... aborting commit
 		if [ $(which bcompare) ]; then
