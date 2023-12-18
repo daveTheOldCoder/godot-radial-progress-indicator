@@ -50,6 +50,5 @@ if len(sys.argv) < 2:
 
 v1 = get_version_from_file(sys.argv[1])
 v2 = get_version_from_file(sys.argv[2])
-print(v1, v2)
 
 sys.exit(0 if (v1 == v2) else 1)
