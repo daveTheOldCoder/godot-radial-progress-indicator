@@ -16,10 +16,11 @@ def get_version_from_py_file(path):
 	a = locals()['major']
 	b = locals()['minor']
 	c = locals()['patch']
+	d = locals()['status']
 	# Use the modulo operator for string interpolation rather than an f-string,
 	# so if Python 2 is used to run this script, the sys.version_info check
 	# will report an error, instead of a syntax error occuring.
-	return '%d.%d.%d' % (a, b, c)
+	return '%d.%d.%d-%s' % (a, b, c, d)
 
 def get_version_from_cfg_file(path):
 	file = open(path, 'r')
@@ -50,5 +51,6 @@ if len(sys.argv) < 2:
 
 v1 = get_version_from_file(sys.argv[1])
 v2 = get_version_from_file(sys.argv[2])
+print(v1,v2)
 
 sys.exit(0 if (v1 == v2) else 1)
