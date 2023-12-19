@@ -19,7 +19,7 @@ def get_version_from_py_file(path):
 	d = locals()['status']
 	# Use the modulo operator for string interpolation rather than an f-string,
 	# so if Python 2 is used to run this script, the sys.version_info check
-	# will report an error, instead of a syntax error occuring.
+	# will report an error, instead of a syntax error occurring.
 	return '%d.%d.%d-%s' % (a, b, c, d)
 
 def get_version_from_cfg_file(path):
