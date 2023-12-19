@@ -19,11 +19,16 @@ allownonascii=$(git config --type=bool hooks.allownonascii)
 # Redirect output to stderr.
 exec 1>&2
 
+HOOKS_PATH="$(git config --get core.hooksPath)"
+if [ -z "$HOOKS_PATH" ]; then
+	HOOKS_PATH=".git/hooks"
+fi
+
 # The two parameters are files that contain version numbers.
 # If the versions differ or the comparision failed, exit with status 1,
 # and open a comparison session in Beyond Compare if it's available.
 abort_if_versions_differ () {
-	$(git config --get core.hooksPath)/versions_consistent.py "$1" "$2" >/dev/null
+	"$HOOKS_PATH"/versions_consistent.py "$1" "$2" >/dev/null
 	if [ $? -ne 0 ]; then
 		echo Versions in "$1" and "$2" may be different ... aborting commit
 		if [ $(which bcompare) ]; then
