@@ -57,8 +57,8 @@ abort_if_different () {
 # Perform consistency checks.
 abort_if_versions_differ "version.py" "addons/radial_progress/plugin.cfg"
 abort_if_different "version.py" "addons/radial_progress/version.py"
-abort_if_different "addons/" "demo/addons/"
 abort_if_different "LICENSE" "addons/radial_progress/LICENSE"
+abort_if_different "addons/" "demo/addons/"
 
 # Cross platform projects tend to avoid non-ASCII filenames; prevent
 # them from being added to the repository. We exploit the fact that the
