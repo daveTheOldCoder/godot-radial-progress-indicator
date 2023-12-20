@@ -1,0 +1,8 @@
+This git_hooks directory was created so that hook scripts can be placed in the repository.
+
+By default, git hooks are in the directory .git/hooks, and the .git directory is excluded from the repository.
+
+To configure git to use this directory for hooks, run this command from the repository root directory:
+$ git config --local core.hooksPath .git_hooks
+
+That command will add or modify .git/config.
