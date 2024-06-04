@@ -2,36 +2,12 @@
 extends Control
 class_name RadialProgress
 
-@export var max_value: float = 100.0:
-	set(v):
-		max_value = v
-		_draw()
-
-@export var radius: float = 120.0:
-	set(v):
-		radius = v
-		queue_redraw()
-
-@export var progress: float = 0.0:
-	set(v):
-		progress = v
-		queue_redraw()
-
-@export var thickness: float = 20.0:
-	set(v):
-		thickness = v
-		queue_redraw()
-
-@export var bg_color := Color(0.5, 0.5, 0.5, 1.0):
-	set(v):
-		bg_color = v
-		queue_redraw()
-
-@export var bar_color := Color(0.2, 0.9, 0.2, 1.0):
-	set(v):
-		bar_color = v
-		queue_redraw()
-
+@export var max_value: float = 100.0
+@export var radius: float = 120.0
+@export var progress: float = 0.0
+@export var thickness: float = 20.0
+@export var bg_color := Color(0.5, 0.5, 0.5, 1.0)
+@export var bar_color := Color(0.2, 0.9, 0.2, 1.0)
 @export var ring: bool = false
 @export var nb_points: int = 32
 
