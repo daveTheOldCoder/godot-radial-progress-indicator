@@ -25,4 +25,3 @@ func _on_slider_value_changed(v: float) -> void:
 	radial_progress2.progress =\
 			(v - slider.min_value) / (slider.max_value - slider.min_value)\
 			* radial_progress2.max_value
-
