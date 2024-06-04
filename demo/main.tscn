@@ -37,6 +37,7 @@ offset_right = 493.0
 offset_bottom = 174.0
 script = ExtResource("2_w6qsq")
 radius = 100.0
+ring = true
 
 [node name="RadialProgress2" type="Control" parent="."]
 layout_mode = 3
@@ -47,3 +48,4 @@ offset_right = 493.0
 offset_bottom = 408.0
 script = ExtResource("2_w6qsq")
 radius = 100.0
+ring = true
