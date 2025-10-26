@@ -1,8 +1,6 @@
 # Radial Progress Indicator
 Radial progress indicator is a plugin for the Godot game engine. It is a Control that displays a radial progress indicator with several options.
 
-Tested in Godot 4.0.4-stable, Godot 4.1.3-stable and Godot 4.2.1-stable.
-
 ## Properties
 
 - max\_value : maximum value<br/>
